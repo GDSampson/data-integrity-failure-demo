@@ -17,13 +17,16 @@ function loadNotes() {
 
 function saveNote() {
     const note = document.getElementById("noteInput").value;
+    
 
     if (!note) {
         return;
     }
 
+    const formattedNote = formatNote(note);
+
     const notes = JSON.parse(localStorage.getItem("notes")) || [];
-    notes.push(note);
+    notes.push(formattedNote);
     localStorage.setItem("notes", JSON.stringify(notes));
     loadNotes();
     document.getElementById("noteInput").value = "";
