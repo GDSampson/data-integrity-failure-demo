@@ -1,5 +1,5 @@
 function formatNote(noteContent) {
-    alert("hey!");
+    alert('hello');
     return noteContent.toUpperCase();
   }
 
